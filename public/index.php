@@ -1,53 +1,18 @@
 <?php
 
-$title = 'Blog Home';
-$header = "Recent Posts" ;
-$posts = [
-    1 => [
-        'title' => 'Title 1',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-1',
-    ],
-    2 => [
-        'title' => 'Title 2',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-2',
-    ],
-    3 => [
-        'title' => 'Title 3',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-3',
-    ],
-    4 => [
-        'title' => 'Title 4',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-4',
-    ],
-    5 => [
-        'title' => 'Title 5',
-        'desc' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        'slug' => 'title-5',
-    ],
-];
 
-$most_popular_posts = [
-    1 => [
-        'title' => 'An item',
-        'slug' => "item 4",
-    ],
-    2 => [
-        'title' => 'A second item',
-        'slug' => "item 4",
-    ],
-    3 => [
-        'title' => 'A third item',
-        'slug' => "item 4",
-    ],
-    4 => [
-        'title' => 'A fourth item',
-        'slug' => "item 4",
-    ],
-   
-];
+define("PATH", 'http://blog.loc');
+define("ROOT", dirname(__DIR__));
 
-require_once "../app/views/index.tmpl.php";
+define("APP", ROOT . '/app');
+define("CONTROLLERS", APP . '/controllers');
+define("VIEWS", APP . '/views');
+
+define("CORE", ROOT . '/core');
+
+define("PUBLIC", ROOT . '/public');
+
+
+
+require CORE . '/functions.php';
+require CONTROLLERS . '/index.php';

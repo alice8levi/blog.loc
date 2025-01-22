@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">    
@@ -27,7 +27,7 @@
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.php">Contacts</a>
+                                <a class="nav-link" href="contacts.php">Contacts</a>
                             </li>
                         </ul>
                     </div>
