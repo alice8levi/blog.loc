@@ -1,5 +1,5 @@
 
-<? require_once ('components/header.php'); ?>
+<? require_once (VIEWS . '/components/header.php'); ?>
 
 
         <main class="main py-3">
@@ -36,4 +36,4 @@
 
         </main>
 
-        <? require_once ('components/footer.php'); ?>
+        <? require_once (VIEWS . '/components/footer.php'); ?>

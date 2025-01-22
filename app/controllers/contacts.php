@@ -1,6 +1,5 @@
 <?php
 
-require CORE.'functions.php';
 
 $title = 'Contacts';
 

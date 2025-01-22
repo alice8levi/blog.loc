@@ -6,7 +6,7 @@
              <?php //require_once VIEWS . 'components/sidebar.php' ?> 
             <div class="col-md-12">
 
-                <?= $contacts ?>
+               <h4>404 - Page not found</h4>
 
             </div>
 
