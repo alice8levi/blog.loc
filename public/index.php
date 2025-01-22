@@ -1,7 +1,7 @@
 <?php
 
 
-define("PATH", 'http://blog.loc');
+define("PATH", 'https://blog.loc');
 define("ROOT", dirname(__DIR__));
 
 define("APP", ROOT . '/app');
@@ -17,11 +17,11 @@ define("PUBLIC", ROOT . '/public');
 require CORE . '/functions.php';
 
 
-$uri = trim(($_SERVER['REQUEST_URI']), '/');
+$uri = trim(parse_url($_SERVER['REQUEST_URI'])['path'], '/');
 
 if ($uri === '') {
     require CONTROLLERS . '/index.php';
-} elseif ($uri == 'contacts.php') {
+} elseif ($uri == 'contacts') {
     require CONTROLLERS . '/contacts.php';
  } 
   else {
