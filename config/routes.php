@@ -1,6 +1,6 @@
 <?php
 $routes = [
     '' => 'index.php',
-    'about' => 'about.php',
+    'contacts' => 'contacts.php',
     'post' => 'post.php',
 ];
