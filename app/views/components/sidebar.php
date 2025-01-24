@@ -1,4 +1,7 @@
-<div class="col-2">
+<?php $most_popular_posts = $db->query("SELECT * FROM posts ORDER BY post_id DESC LIMIT 5")->findAll();     
+?>
+            
+            <div class="col-2">
                         <h3>Topics</h3>
                         <div class="list-group list-group-flush">
                                 <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
