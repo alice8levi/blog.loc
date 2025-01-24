@@ -7,7 +7,7 @@
                                 <a class="list-group-item list-group-item-action disabled" aria-disabled="true">A disabled link item</a>
                                 -->                                
                                 <?php foreach ($most_popular_posts as $link):?>                                       
-                                        <a href="<?=$link['slug']?>" class='list-group-item list-group-item-action'><?=$link['title']?></a>
+                                        <a href="post?id=<?= $post['post_id'] ?>" class='list-group-item list-group-item-action'><?=$link['title']?></a>
                                 <?php endforeach; ?>       
                             </div>
                      </div>
