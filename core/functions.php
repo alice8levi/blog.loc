@@ -24,8 +24,19 @@ function loadReqData($fillable = [])
     $data = [];
     foreach ($_POST as $k => $v) {
         if (in_array($k, $fillable)) {
-            $data[$k] = $v;
+            $data[$k] = trim($v) ;
         }
     }
     return $data;
+}
+
+function old($fieldname)
+{
+   // return isset($_POST[$fieldname]) ?htmlspecialchars($_POST[$fieldname])  : '';
+    return isset($_POST[$fieldname]) ? h($_POST[$fieldname]) : '';
+}
+
+function h($str)
+{
+    return htmlspecialchars($str, ENT_QUOTES);
 }
