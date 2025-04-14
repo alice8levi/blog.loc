@@ -1,4 +1,5 @@
 <?php
+// карта маршрутов
 $routes = [
     '' => 'index.php',
     'contacts' => 'contacts.php',

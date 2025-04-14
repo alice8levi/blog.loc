@@ -40,3 +40,29 @@ function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES);
 }
+
+function getAlerts()
+{
+    if (!empty($_SESSION['success'])) {
+        require_once COMPONENTS . '/alert-success.php';
+        unset($_SESSION['success']);
+    }
+    if (!empty($_SESSION['error'])) {
+        require_once COMPONENTS . '/alert-error.php';
+        unset($_SESSION['error']);
+    }
+}
+
+
+function redirect($url = '')
+{
+    if ($url) {
+        $redirect = $url;
+    } else {
+        //HTTP_REFERER  Адрес страницы, с которой браузер пользователя перешёл на текущую страницу.
+        $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : PATH;
+    }
+    header("Location: {$redirect}");
+    die;
+}
+

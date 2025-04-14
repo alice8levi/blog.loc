@@ -14,14 +14,14 @@ class Validator
     public function validate($data = [], $rules = [])
     {
         foreach ($data as $fieldname => $value) {
-            //если это поле нужно валидировать
+            //если это поле нужно валидировать(если оно есть в массиве правил rules)
             if (in_array($fieldname, array_keys($rules))) {
                // dump($fieldname);
                 //проверяем есть ли такой валидатор
                 $this->checkValidator([
-                    'fieldname' => $fieldname,
-                    'value' => $value,
-                    'rules' => $rules[$fieldname],
+                    'fieldname' => $fieldname, //название поля
+                    'value' => $value,//данные поля
+                    'rules' => $rules[$fieldname], //массив правил для этого поля
                 ]);
             }
         }

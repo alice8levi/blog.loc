@@ -5,7 +5,7 @@
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'TITLE' ?></title>
-    <base href="<?= PATH?>/"> 
+   <base href="<?= PATH?>/">   <!-- присоединяет все относительные ссылки к этому адресу -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="assets/main.css">
@@ -38,3 +38,4 @@
                 </div>
             </nav>
         </header>
+        <?php getAlerts(); ?>
