@@ -8,8 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //dd($_POST);
     $fillable = ['title', 'content', 'excerpt'];//ожидаемые поля
     $data = loadReqData($fillable); //соберет только те, которые есть в fillable
-    // validation
-    $errors = [];
+    // validation  
     $rules = [
         'title' => [
             'required' => true,
@@ -23,19 +22,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ],
         'content' => [
             'required' => true,
-            'min' => 100,
+            'min' => 10,
+        ],
+        'email' => [
+            'email' => true,
+        ],
+        'password' => [
+            'required' => true,
+            'min' => 6,
+        ],
+        'password_confirm' => [
+            'match' => 'password',
         ],
     ];
     $validator = new Validator();
 
-    $validation = $validator->validate($data, $rules);
-    //dump($validation->errors);
-    // if ($validation->hasErrors()) {
-    //     print_arr($validation->getErrors());
-    // } else {
-    //     echo 'SUCCESS';
-    // }
-    // die;
+    $validation = $validator->validate([
+        'title' => 'Adffdd fdfdfdsf fdfd',
+        'excerpt' => 'yjjujhgvvvvvvvvvvvvfd',
+        'content' => 'Adffdd fdfdfdsf fdfdAdffdd fdfdfdsf fdfd',
+        'email' => 'mail@mail.com',
+        'password' => '123456',
+        'password_confirm' => '123456',
+    ], $rules);
+
     if (!$validation->hasErrors()) {
         if ($db->query("INSERT INTO posts (`title`, `content`, `excerpt`) VALUES (:title, :content, :excerpt)", $data)) {
             $_SESSION['success'] = 'OK';
@@ -44,22 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
       //  redirect();
     }
-    // if (empty($data['title'])) {
-    //     $errors['title'] = 'Title is required';
-    // }
-    // if (empty($data['content'])) {
-    //     $errors['content'] = 'Content is required';
-    // }
-    // if (empty($data['excerpt'])) {
-    //     $errors['excerpt'] = 'Excerpt is required';
-    // }
-    // if (empty($errors)) {
-    //     if ($db->query("INSERT INTO posts (`title`, `content`, `excerpt`) VALUES (:title, :content, :excerpt)", $data)) {
-    //         echo 'Post created';
-    //     } else {
-    //         echo 'DB Error';
-    //     }
-    // }
+
 }
 $title = "Blog/New post";
 require_once VIEWS . '/create-post.tmpl.php';

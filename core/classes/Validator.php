@@ -4,15 +4,18 @@ class Validator
     protected $errors = [];
     
     //список существующих валидаторов. названия одлжны совпадать с именами функций
-    protected $validators_list = ['required', 'min', 'max']; 
+    protected $data_items;
+    protected $validators_list = ['required', 'min', 'max', 'email', 'match'];
     protected $messages = [
         'required' => 'The :fieldname: field is required',
         'min' => 'The :fieldname: field must be a minimun :rulevalue: characters',
         'max' => 'The :fieldname: field must be a maximum :rulevalue: characters',
-       
+        'email' => 'Not valid email',
+        'match' => 'The :fieldname: field must match :rulevalue: field',
     ];
     public function validate($data = [], $rules = [])
     {
+        $this->data_items = $data;
         foreach ($data as $fieldname => $value) {
             //если это поле нужно валидировать(если оно есть в массиве правил rules)
             if (in_array($fieldname, array_keys($rules))) {
@@ -71,6 +74,15 @@ class Validator
         return mb_strlen($value, 'UTF-8') <= $rule_value;
     }
 
+    protected function email($value, $rule_value)
+    {
+        return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
+
+    protected function match($value, $rule_value)
+    {
+        return $value === $this->data_items[$rule_value];
+    }
 
     public function listErrors($fieldname)
     {
