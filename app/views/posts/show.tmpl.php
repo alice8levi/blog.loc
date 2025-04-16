@@ -16,6 +16,11 @@
 
     
                 </div>
+                <form action="/posts" method="post">
+                     <input type="hidden" name="_method" value="delete">
+                     <input type="hidden" name="id" value="<?= $post['post_id'] ?>">
+                     <button type="submit" class="btn btn-link">Delete</button>
+                 </form>
             </div>
 
         </main>
