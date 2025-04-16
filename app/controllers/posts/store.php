@@ -1,7 +1,5 @@
-<?php
-/**
- * @var DB $db
- */
+<?
+global $db;
 
 require_once(CORE.'/classes/Validator.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -51,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['success'] = 'OK';
         } else {
             $_SESSION['error'] = 'DB Error';
-        }
-      //  redirect();
+        }    
+    redirect('/');
+    } else {
+         require POSTS_VIEWS . '/create.tmpl.php';
     }
 
 }
-$title = "Blog/New post";
-require_once VIEWS . '/create-post.tmpl.php';

@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     
-                     <? require_once ('components/sidebar.php'); ?>
+                     <? require (COMPONENTS.'/sidebar.php'); ?>
                     <div class="col-10">
                         <h3><?= $header ?? '' ?></h3>
                             <?php foreach ($posts as $post):?>  
@@ -18,7 +18,7 @@
                                         </div> -->
                                         <div class="col-md-12">
                                         <div class="card-body">                                
-                                                <a href="post?id=<?= $post['post_id'] ?>">
+                                                <a href="posts?id=<?= $post['post_id'] ?>">
                                                     <h5 class="card-title"><?= $post['title']?></h5></a> 
                                                 <p class="card-text"><?= $post['excerpt']?></p>
                                                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>  

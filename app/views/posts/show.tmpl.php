@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     
-                     <? require_once ('components/sidebar.php'); ?>
+                     <? require_once (COMPONENTS.'/sidebar.php'); ?>
                     <div class="col-10">
                     <h1><?= $post['title'] ?></h1>
                           <p><?= $post['content'] ?></p>
