@@ -19,5 +19,5 @@ require CONFIG . '/routes.php'; // теперь здесь будут лежат
 $router->match();
 
 
-require_once CORE . '/router.php';
+// require_once CORE . '/router.php';
 
