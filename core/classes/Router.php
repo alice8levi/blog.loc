@@ -53,5 +53,15 @@ class Router
     {
         $this->add($uri, $controller, 'DELETE');
     }
+
+    public function put($uri, $controller)
+    {
+        $this->add($uri, $controller, 'PUT');
+    }
+
+    public function patch($uri, $controller)
+    {
+        $this->add($uri, $controller, 'PATCH');
+    }
     //5 -> config->routes
 }

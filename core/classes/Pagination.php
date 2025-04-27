@@ -49,12 +49,12 @@ class Pagination
      {
          $url = $_SERVER['REQUEST_URI'];
          $url = explode('?', $url); //
-         dump($url);
+        //  dump($url);
          $uri = $url[0];
          if (isset($url[1]) && $url[1] != '') {
              $uri .= '?';
              $params = explode('&', $url[1]);
-             dump($params);
+            //  dump($params);
              foreach ($params as $param) {
                  if (!str_contains($param, "page=")) {
                      $uri .= "{$param}&";
